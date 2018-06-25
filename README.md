@@ -1,2 +1,2 @@
 # Rxjs6-Example
-Rxjs Example
+Rxjs6 Example in TypeScript
