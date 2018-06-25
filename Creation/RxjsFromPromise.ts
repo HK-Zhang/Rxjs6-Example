@@ -19,10 +19,14 @@ export class FromPromisePoc {
         };
         // emit true, then false
         const source = of(true, false);
-        const example = source.pipe(mergeMap((val) =>
-        from(myPromise(val)).pipe(// catch and gracefully handle rejections
-            catchError((error) => of(`Error: ${error}`))),
-        ));
+
+        // catch and gracefully handle rejections
+        const handleError = catchError((error) => of(`Error: ${error}`));
+
+        const mergeWithMyPromise = mergeMap((val) => from(myPromise(val)).pipe(handleError));
+
+        const example = source.pipe(mergeWithMyPromise);
+
         // output: 'Error: Rejected!', 'Resolved!'
         const subscribe = example.subscribe((val) => console.log(val));
     }
