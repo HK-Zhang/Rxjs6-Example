@@ -8,7 +8,7 @@
 
 ##### Example 1: Ignore all elements from source
 
-```js
+```ts
 import { interval, Observable, of, throwError } from "rxjs";
 import { flatMap, ignoreElements, take } from "rxjs/operators";
 
