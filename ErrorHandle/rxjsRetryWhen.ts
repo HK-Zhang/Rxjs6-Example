@@ -24,10 +24,9 @@ export class RetryWhenPoc {
         const logError = tap((val) => console.log(`Value ${val} was too high!`));
         const restartLater = delayWhen((val: number) => timer(val * 1000));
 
-        const logAndRetry = retryWhen((errors) =>
-            errors.pipe(
-                logError
-                , restartLater));
+        const logAndRetry = retryWhen((errors) => errors.pipe(
+            logError
+            , restartLater));
 
         const example = source.pipe(
             throwErrorOnPurpose

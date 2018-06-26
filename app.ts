@@ -46,7 +46,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new singlePoc();
 // let a = new samplePoc();
 // let a = new lastPoc();
-// const a = new IgnoreElementPoc();
+const a = new IgnoreElementPoc();
 // let a = new FirstPoc();
 // let a = new debouncePoc();
 // const a = new OfPoc();
@@ -63,7 +63,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new StartWithPoc();
 // const a = new WithLatestFromPoc();
 // let a = new FromPoc();
-const a = new FromPromisePoc();
+// const a = new FromPromisePoc();
 // let a = new Poc();
 // let a = new SetPoc();
 // let a = new QueuePoc();
