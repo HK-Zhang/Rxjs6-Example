@@ -37,7 +37,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new setImPoc();
 // const a = new CombineAllPoc();
 // let a = new orderedMapImPoc();
-// let a = new throttleTimePoc();
+const a = new ThrottleTimePoc();
 // let a = new throttlePoc();
 // let a = new takewhilePoc();
 // let a = new skipWhilePoc();
@@ -46,7 +46,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new singlePoc();
 // let a = new samplePoc();
 // let a = new lastPoc();
-const a = new IgnoreElementPoc();
+// const a = new IgnoreElementPoc();
 // let a = new FirstPoc();
 // let a = new debouncePoc();
 // const a = new OfPoc();
