@@ -37,8 +37,8 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new setImPoc();
 // const a = new CombineAllPoc();
 // let a = new orderedMapImPoc();
-const a = new ThrottleTimePoc();
-// let a = new throttlePoc();
+// const a = new ThrottleTimePoc();
+const a = new ThrottlePoc();
 // let a = new takewhilePoc();
 // let a = new skipWhilePoc();
 // let a = new skipUntilPoc();
