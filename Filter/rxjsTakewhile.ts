@@ -4,7 +4,7 @@ import { filter, takeWhile } from "rxjs/operators";
 export class TakewhilePoc {
 
     public test() {
-        this.func1();
+        // this.func1();
         this.func2();
     }
 
@@ -12,7 +12,9 @@ export class TakewhilePoc {
         // emit 1,2,3,4,5
         const source = of(1, 2, 3, 4, 5);
         // allow values until value from source is greater than 4, then complete
-        const example = source.pipe(takeWhile((val) => val <= 4));
+        const takeLE4 = takeWhile((val) => val <= 4);
+
+        const example = source.pipe(takeLE4);
         // output: 1,2,3,4
         const subscribe = example.subscribe((val) => console.log(val));
     }
@@ -22,13 +24,26 @@ export class TakewhilePoc {
         const source = of(3, 3, 3, 9, 1, 4, 5, 8, 96, 3, 66, 3, 3, 3);
 
         // allow values until value from source equals 3, then complete
-        // output: [3, 3, 3]
-        source.pipe(
-            takeWhile((it) => it === 3))
+        const take3 = takeWhile((it) => it === 3);
+
+        // output:
+        // takeWhile 3
+        // takeWhile 3
+        // takeWhile 3
+        source.pipe(take3)
             .subscribe((val) => console.log("takeWhile", val));
 
-        // output: [3, 3, 3, 3, 3, 3, 3]
-        source.pipe(filter((it) => it === 3)).subscribe((val) => console.log("filter", val));
+        const filter3 = filter((it) => it === 3);
+
+        // output:
+        // filter 3
+        // filter 3
+        // filter 3
+        // filter 3
+        // filter 3
+        // filter 3
+
+        source.pipe(filter3).subscribe((val) => console.log("filter", val));
     }
 
 
