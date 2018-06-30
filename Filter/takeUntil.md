@@ -8,7 +8,7 @@
 
 ##### Example 1: Take values until timer emits
 
-```js
+```ts
 import { interval, Observable, timer } from "rxjs";
 import { filter, map, scan, takeUntil, withLatestFrom } from "rxjs/operators";
 
@@ -24,7 +24,7 @@ const subscribe = example.subscribe((val) => console.log(val));
 
 ##### Example 2: Take the first 5 even numbers
 
-```js
+```ts
 import { interval, Observable, timer } from "rxjs";
 import { filter, map, scan, takeUntil, withLatestFrom } from "rxjs/operators";
 

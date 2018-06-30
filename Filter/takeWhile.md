@@ -10,7 +10,7 @@
 ##### Example 1: Take values under limit
 
 
-```js
+```ts
 import { Observable, of, zip } from "rxjs";
 import { filter, takeWhile } from "rxjs/operators";
 
@@ -27,7 +27,7 @@ const subscribe = example.subscribe((val) => console.log(val));
 ##### Example 2: Difference between takeWhile() and filter()
 
 
-```js
+```ts
 // emit 3, 3, 3, 9, 1, 4, 5, 8, 96, 3, 66, 3, 3, 3
 const source = of(3, 3, 3, 9, 1, 4, 5, 8, 96, 3, 66, 3, 3, 3);
 

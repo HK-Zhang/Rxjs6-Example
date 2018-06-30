@@ -9,7 +9,7 @@
 ##### Example 1: Throttle for 2 seconds, based on second observable
 
 
-```js
+```ts
 import { interval, Observable } from "rxjs";
 import { map, throttle } from "rxjs/operators";
 var Promise = require("promise");
@@ -28,7 +28,7 @@ const subscribe = example.subscribe((val) => console.log(val));
 ##### Example 2: Throttle with promise
 
 
-```js
+```ts
 // emit value every 1 second
 const source = interval(1000);
 
