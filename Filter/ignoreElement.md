@@ -31,7 +31,7 @@ const subscribe = example.subscribe(
 ##### Example 2: Only displaying error
 
 
-```js
+```ts
 import { interval, Observable, of, throwError } from "rxjs";
 import { flatMap, ignoreElements, take } from "rxjs/operators";
 
