@@ -1,4 +1,4 @@
-import { interval, merge, Observable } from "rxjs";
+import { interval, merge } from "rxjs";
 import { throttleTime } from "rxjs/operators";
 
 

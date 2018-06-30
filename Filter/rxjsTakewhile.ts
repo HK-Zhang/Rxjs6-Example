@@ -1,4 +1,4 @@
-import { Observable, of, zip } from "rxjs";
+import { of } from "rxjs";
 import { filter, takeWhile } from "rxjs/operators";
 
 export class TakewhilePoc {

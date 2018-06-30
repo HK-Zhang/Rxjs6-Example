@@ -1,4 +1,4 @@
-﻿import { interval, Observable, timer } from "rxjs";
+﻿import { interval, timer } from "rxjs";
 import { filter, map, scan, takeUntil, withLatestFrom } from "rxjs/operators";
 
 
