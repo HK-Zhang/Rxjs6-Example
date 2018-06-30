@@ -6,11 +6,15 @@ import {
     ReducePoc, ScanPoc, SwithMapPoc, WindowCountPoc, WindowPoc, WindowTimePoc, WindowTogglePoc, WindowWhenPoc,
 } from "./Transformation";
 
-import { CombineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, MergeAllPoc, MergePoc, PairwisePoc, RacePoc,
-    StartWithPoc, WithLatestFromPoc, ZipPoc } from "./Combination";
+import {
+    CombineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, MergeAllPoc, MergePoc, PairwisePoc, RacePoc,
+    StartWithPoc, WithLatestFromPoc, ZipPoc,
+} from "./Combination";
 
-import { CreatePoc, EmptyPoc, FromPoc, FromPromisePoc, IntervalPoc, OfPoc, RangePoc, ThrowPoc,
-    TimerPoc } from "./Creation";
+import {
+    CreatePoc, EmptyPoc, FromPoc, FromPromisePoc, IntervalPoc, OfPoc, RangePoc, ThrowPoc,
+    TimerPoc,
+} from "./Creation";
 
 import { CatchPoc, RetryPoc, RetryWhenPoc } from "./ErrorHandle";
 
@@ -26,26 +30,62 @@ import { DefaultIfEmptyPoc, EveryPoc, IIFPoc } from "./Conditional";
 
 import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } from "./Subject";
 
+let obj: any;
+let rxjsMethod = "takewhile";
 
-// let a = new fromJsImPoc();
-// const a = new PipePoc();
-// const a = new IIFPoc();
-// const a = new ZipPoc();
-// let a = new orderedsetImPoc();
-// let a = new racePoc();
-// const a = new MergeAllPoc();
-// let a = new setImPoc();
-// const a = new CombineAllPoc();
-// let a = new orderedMapImPoc();
-// const a = new ThrottleTimePoc();
-// const a = new ThrottlePoc();
-// const a = new TakewhilePoc();
-// let a = new skipWhilePoc();
-// let a = new skipUntilPoc();
-// let a = new skipPoc();
-// let a = new singlePoc();
-// let a = new samplePoc();
-// let a = new lastPoc();
+switch (rxjsMethod) {
+    case "pipe":
+        obj = new PipePoc();
+        break;
+    case "iif":
+        obj = new IIFPoc();
+        break;
+    case "zip":
+        obj = new ZipPoc();
+        break;
+    case "mergeAll":
+        obj = new MergeAllPoc();
+        break;
+    case "combineAll":
+        obj = new CombineAllPoc();
+        break;
+    case "throttleTime":
+        obj = new ThrottleTimePoc();
+        break;
+    case "throttle":
+        obj = new ThrottlePoc();
+        break;
+    case "takewhile":
+        obj = new TakewhilePoc();
+        break;
+    case "skipWhile":
+        obj = new SkipWhilePoc();
+        break;
+    case "skipUntil":
+        obj = new SkipUntilPoc();
+        break;
+    case "race":
+        obj = new RacePoc();
+        break;
+    case "skip":
+        obj = new SkipPoc();
+        break;
+    case "single":
+        obj = new SinglePoc();
+        break;
+    case "sample":
+        obj = new SamplePoc();
+        break;
+    case "last":
+        obj = new LastPoc();
+        break;
+    case "takeUntil":
+        obj = new TakeUntilPoc();
+        break;
+    default:
+        break;
+}
+
 // const a = new IgnoreElementPoc();
 // let a = new FirstPoc();
 // let a = new debouncePoc();
@@ -75,7 +115,6 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new RxjsDistinctUntilChangedPoc();
 // let a = new FilterPoc();
 // let a = new TakePoc();
-const a = new TakeUntilPoc();
 // let a = new SharePoc();
 // let a = new BufferTimePoc();
 // const a = new ScanPoc();
@@ -125,4 +164,4 @@ const a = new TakeUntilPoc();
 
 
 
-a.test();
+obj.test();
