@@ -14,9 +14,9 @@ export class TakeUntilPoc {
         // emit value every 1s
         const source = interval(1000);
         // after 5 seconds, emit value
-        const timer$ = timer(5000);
+        const after5sec = takeUntil(timer(5000));
         // when timer emits after 5s, complete source
-        const example = source.pipe(takeUntil(timer$));
+        const example = source.pipe(after5sec);
         // output: 0,1,2,3
         const subscribe = example.subscribe((val) => console.log(val));
     }
@@ -25,18 +25,23 @@ export class TakeUntilPoc {
         // emit value every 1s
         const source = interval(1000);
         // is number even?
-        const isEven = (val) => val % 2 === 0;
+        const filterEven = filter((val: number) => val % 2 === 0);
         // only allow values that are even
-        const evenSource = source.pipe(filter(isEven));
-        // keep a running total of the number of even numbers out
-        const evenNumberCount = evenSource.pipe(scan((acc, _) => acc + 1, 0));
-        // do not emit until 5 even numbers have been emitted
-        const fiveEvenNumbers = evenNumberCount.pipe(filter((val) => val > 5));
+        const evenSource = source.pipe(filterEven);
 
+        // keep a running total of the number of even numbers out
+        const accumulate = scan((acc, _) => acc + 1, 0);
+        const evenNumberCount = evenSource.pipe(accumulate);
+
+        // do not emit until 5 even numbers have been emitted
+        const filterGE = (baseline) => filter((val) => val > baseline);
+        const fiveEvenNumbers = evenNumberCount.pipe(filterGE(5));
+
+        const mapping = map(([val, count]) => `Even number (${count}) : ${val}`);
         const example = evenSource.pipe(
             // also give me the current even number count for display
             withLatestFrom(evenNumberCount)
-            , map(([val, count]) => `Even number (${count}) : ${val}`)
+            , mapping
             // when five even numbers have been emitted, complete source observable
             , takeUntil(fiveEvenNumbers));
         /*
