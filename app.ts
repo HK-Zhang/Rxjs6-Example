@@ -82,86 +82,202 @@ switch (rxjsMethod) {
     case "takeUntil":
         obj = new TakeUntilPoc();
         break;
+    case "ignoreElements":
+        obj = new IgnoreElementPoc();
+        break;
+    case "first":
+        obj = new FirstPoc();
+        break;
+    case "forkJoin":
+        obj = new ForkJoinPoc();
+        break;
+    case "concat":
+        obj = new ConcatPoc();
+        break;
+    case "concatMap":
+        obj = new ConcatMapPoc();
+        break;
+    case "map":
+        obj = new MapPoc();
+        break;
+    case "mergeMap":
+        obj = new MergeMapPoc();
+        break;
+    case "switchMap":
+        obj = new SwithMapPoc();
+        break;
+    case "tap":
+        obj = new DoPoc();
+        break;
+    case "of":
+        obj = new OfPoc();
+        break;
+    case "debounce":
+        obj = new DebouncePoc();
+        break;
+    case "retry":
+        obj = new RetryPoc();
+        break;
+    case "catchError":
+        obj = new CatchPoc();
+        break;
+    case "from.promise":
+        obj = new FromPromisePoc();
+        break;
+    case "from":
+        obj = new FromPoc();
+        break;
+    case "withLatestFrom":
+        obj = new WithLatestFromPoc();
+        break;
+    case "startWith":
+        obj = new StartWithPoc();
+        break;
+    case "merge":
+        obj = new MergePoc();
+        break;
+    case "pairwise":
+        obj = new PairwisePoc();
+        break;
+    case "combineLatest":
+        obj = new CombineLatestPoc();
+        break;
+    case "retryWhen":
+        obj = new RetryWhenPoc();
+        break;
+    case "debounceTime":
+        obj = new DebounceTimePoc();
+        break;
+    case "distinctUntilChanged":
+        obj = new RxjsDistinctUntilChangedPoc();
+        break;
+    case "filter":
+        obj = new FilterPoc();
+        break;
+    case "take":
+        obj = new TakePoc();
+        break;
+    case "share":
+        obj = new SharePoc();
+        break;
+    case "bufferTime":
+        obj = new BufferTimePoc();
+        break;
+    case "scan":
+        obj = new ScanPoc();
+        break;
+    case "create":
+        obj = new CreatePoc();
+        break;
+    case "empty":
+        obj = new EmptyPoc();
+        break;
+    case "interval":
+        obj = new IntervalPoc();
+        break;
+    case "range":
+        obj = new RangePoc();
+        break;
+    case "throwError":
+        obj = new ThrowPoc();
+        break;
+    case "timer":
+        obj = new TimerPoc();
+        break;
+    case "every":
+        obj = new EveryPoc();
+        break;
+    case "defaultIfEmpty":
+        obj = new DefaultIfEmptyPoc();
+        break;
+    case "delay":
+        obj = new DelayPoc();
+        break;
+    case "delayWhen":
+        obj = new DelayWhenPoc();
+        break;
+    case "let":
+        obj = new LetPoc();
+        break;
+    case "toPromise":
+        obj = new ToPromisePoc();
+        break;
+    case "timeout":
+        obj = new TimeoutPoc();
+        break;
+    case "publish":
+        obj = new PublishPoc();
+        break;
+    case "multicast":
+        obj = new MulticastPoc();
+        break;
+    case "buffer":
+        obj = new BufferPoc();
+        break;
+    case "bufferCount":
+        obj = new BufferCountPoc();
+        break;
+    case "bufferToggle":
+        obj = new BufferTogglePoc();
+        break;
+    case "bufferWhen":
+        obj = new BufferWhenPoc();
+        break;
+    case "concatMapTo":
+        obj = new ConcatMapToPoc();
+        break;
+    case "expand":
+        obj = new ExpandPoc();
+        break;
+    case "exhaustMap":
+        obj = new ExhaustMapPoc();
+        break;
+    case "groupBy":
+        obj = new GroupByPoc();
+        break;
+    case "mapto":
+        obj = new MaptoPoc();
+        break;
+    case "partition":
+        obj = new PartitionPoc();
+        break;
+    case "pluck":
+        obj = new PluckPoc();
+        break;
+    case "reduce":
+        obj = new ReducePoc();
+        break;
+    case "window":
+        obj = new WindowPoc();
+        break;
+    case "windowCount":
+        obj = new WindowCountPoc();
+        break;
+    case "windowTime":
+        obj = new WindowTimePoc();
+        break;
+    case "windowWhen":
+        obj = new WindowWhenPoc();
+        break;
+    case "windowToggle":
+        obj = new WindowTogglePoc();
+        break;
+    case "Subject":
+        obj = new SubjectPoc();
+        break;
+    case "AsyncSubject":
+        obj = new AsyncSubjectPoc();
+        break;
+    case "ReplaySubject":
+        obj = new ReplaySubjectPoc();
+        break;
+    case "BehaviorSubject":
+        obj = new BehaviorSubjectPoc();
+        break;
     default:
+        console.log("No demo for your requested methond.");
         break;
 }
-
-// const a = new IgnoreElementPoc();
-// let a = new FirstPoc();
-// let a = new debouncePoc();
-// const a = new OfPoc();
-// let a = new doPoc();
-// const a = new SwithMapPoc();
-// const a = new MergeMapPoc();
-// let a = new MapPoc();
-// const a = new ConcatMapPoc();
-// const a = new ConcatPoc();
-// const a = new ForkJoinPoc();
-// const a = new CombineLatestPoc();
-// const a = new PairwisePoc();
-// const a = new MergePoc();
-// let a = new StartWithPoc();
-// const a = new WithLatestFromPoc();
-// let a = new FromPoc();
-// const a = new FromPromisePoc();
-// let a = new Poc();
-// let a = new SetPoc();
-// let a = new QueuePoc();
-// let a = new DictionaryPoc();
-// const a = new CatchPoc();
-// const a = new RetryPoc();
-// const a = new RetryWhenPoc();
-// let a = new DebounceTimePoc();
-// let a = new RxjsDistinctUntilChangedPoc();
-// let a = new FilterPoc();
-// let a = new TakePoc();
-// let a = new SharePoc();
-// let a = new BufferTimePoc();
-// const a = new ScanPoc();
-// const a = new CreatePoc();
-// const a = new EmptyPoc();
-// let a = new IntervalPoc();
-// let a = new RangePoc();
-// const a = new ThrowPoc();
-// let a = new TimerPoc();
-// const a = new EveryPoc();
-// const a = new DefaultIfEmptyPoc();
-// let a = new delayPoc();
-// let a = new delayWhenPoc();
-// let a = new LetPoc();
-// const a = new ToPromisePoc();
-// let a = new TimeoutPoc();
-// const a = new PublishPoc();
-// let a = new multicastPoc();
-// const a = new BufferPoc();
-// const a = new BufferCountPoc();
-// const a = new BufferTogglePoc();
-// const a = new BufferWhenPoc();
-// const a = new ConcatMapToPoc();
-// const a = new ExpandPoc();
-// const a = new ExhaustMapPoc();
-// let a = new groupByPoc();
-// const a = new GroupByPoc();
-// let a = new maptoPoc();
-// const a = new PartitionPoc();
-// const a = new PluckPoc();
-// const a = new ReducePoc();
-// let a = new listPoc();
-// const a = new WindowPoc();
-// let a = new windowCountPoc();
-// const a = new WindowTimePoc();
-// const a = new WindowWhenPoc();
-// const a = new WindowTogglePoc();
-// let a = new mapImPoc();
-// const a = new ArrayPoc();
-// const a = new SubjectPoc();
-// const a = new AsyncSubjectPoc();
-// const a = new ReplaySubjectPoc();
-// const a = new BehaviorSubjectPoc();
-// const a = new CollectionPoc();
-// const a = new FunctionPoc();
-// const a = new LangPoc();
-
 
 
 obj.test();

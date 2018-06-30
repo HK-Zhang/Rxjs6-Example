@@ -19,9 +19,7 @@
 ###### Change app.ts as below to debug a particular piece of code
 
 ```ts
-// let a = new lastPoc();
-const a = new IgnoreElementPoc();
-// let a = new FirstPoc();
+let rxjsMethod = "takewhile";
 ```
 ###### Ctrl + Shit + B to build the whole project
 
