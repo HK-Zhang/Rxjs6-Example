@@ -1,12 +1,12 @@
-import { from, interval, Observable } from "rxjs";
+import { from, interval } from "rxjs";
 import { filter, skip } from "rxjs/operators";
 
 
 export class SkipPoc {
 
     public test() {
-        this.func1();
-        // this.func2();
+        // this.func1();
+        this.func2();
     }
 
     public func1() {
@@ -22,13 +22,12 @@ export class SkipPoc {
         const numArrayObs = from([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
         // 3,4,5...
-        const skipObs = numArrayObs.pipe(
-            skip(2))
+        const skipObs = numArrayObs.pipe(skip(2))
             .subscribe(console.log);
 
         // 3,4,5...
-        const filterObs = numArrayObs.pipe(
-            filter((val, index) => index > 1))
+        const skipFirstOne = filter((val, index) => index > 1);
+        const filterObs = numArrayObs.pipe(skipFirstOne)
             .subscribe(console.log);
 
         // Same output!
