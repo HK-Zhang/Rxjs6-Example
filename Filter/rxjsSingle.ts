@@ -1,19 +1,28 @@
-import { from, Observable } from "rxjs";
-import { single } from "rxjs/operators";
+import { from, of } from "rxjs";
+import { catchError, single } from "rxjs/operators";
 
 export class SinglePoc {
 
     public test() {
         this.func1();
-        // this.func2();
     }
 
     public func1() {
-        // emit (1,2,3,4,5)
-        const source = from([1, 2, 3, 4, 5]);
         // emit one item that matches predicate
-        const example = source.pipe(single((val) => val === 4));
-        // output: 4
+        const single4 = single((val) => val === 4);
+        const errorHandler = catchError((error) => of(`Bad Promise: ${error}`));
+
+        // emit (1,2,3,4,4,5)
+        const source = from([1, 2, 3, 4, 4, 5]);
+        const example = source.pipe(single4, errorHandler);
         const subscribe = example.subscribe((val) => console.log(val));
+        // output: Bad Promise: Sequence contains more than one element
+
+        // emit (1,2,3,4,5)
+        const source2 = from([1, 2, 3, 4, 5]);
+        const example2 = source2.pipe(single4, errorHandler);
+        const subscribe2 = example2.subscribe((val) => console.log(val));
+        // output: 4
+
     }
 }
