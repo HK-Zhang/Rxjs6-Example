@@ -1,19 +1,20 @@
-import { from, interval, Observable, zip } from "rxjs";
+import { from, interval, zip } from "rxjs";
 import { sample } from "rxjs/operators";
 
 
 export class SamplePoc {
 
     public test() {
-        this.func1();
-        // this.func2();
+        // this.func1();
+        this.func2();
     }
 
     public func1() {
         // emit value every 1s
         const source = interval(1000);
         // sample last emitted value from source every 2s
-        const example = source.pipe(sample(interval(2000)));
+        const sampling = sample(interval(2000));
+        const example = source.pipe(sampling);
         // output: 2..4..6..8..
         const subscribe = example.subscribe((val) => console.log(val));
     }
@@ -26,7 +27,8 @@ export class SamplePoc {
             interval(2000),
         );
         // sample last emitted value from source every 2.5s
-        const example = source.pipe(sample(interval(2500)));
+        const sampling = sample(interval(2500));
+        const example = source.pipe(sampling);
         // output: ["Joe", 0]...["Frank", 1]...........
         const subscribe = example.subscribe((val) => console.log(val));
     }
