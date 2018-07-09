@@ -1,4 +1,4 @@
-﻿import { from, interval, Observable } from "rxjs";
+﻿import { from, interval } from "rxjs";
 import { filter } from "rxjs/operators";
 
 export class FilterPoc {
@@ -14,7 +14,8 @@ export class FilterPoc {
         // emit (1,2,3,4,5)
         const source = from([1, 2, 3, 4, 5]);
         // filter out non-even numbers
-        const example = source.pipe(filter((num) => num % 2 === 0));
+        const evenOnly = filter((num: number) => num % 2 === 0);
+        const example = source.pipe(evenOnly);
         // output: "Even number: 2", "Even number: 4"
         const subscribe = example.subscribe((val) => console.log(`Even number: ${val}`));
     }
@@ -26,7 +27,8 @@ export class FilterPoc {
             { name: "Bob", age: 25 },
         ]);
         // filter out people with age under 30
-        const example = source.pipe(filter((person) => person.age >= 30));
+        const ageAbove30 = filter((person: any) => person.age >= 30);
+        const example = source.pipe(ageAbove30);
         // output: "Over 30: Joe"
         const subscribe = example.subscribe((val) => console.log(`Over 30: ${val.name}`));
     }
@@ -35,7 +37,8 @@ export class FilterPoc {
         // emit every second
         const source = interval(1000);
         // filter out all values until interval is greater than 5
-        const example = source.pipe(filter((num) => num > 5));
+        const aboveFive = filter((num) => num > 5);
+        const example = source.pipe(aboveFive);
         /*
           "Number greater than 5: 6"
           "Number greater than 5: 7"
