@@ -21,8 +21,7 @@ export class RxjsDistinctUntilChangedPoc {
             3,
         ]);
 
-        const distinctSub = myArrayWithDuplicatesInARow.pipe(
-            distinctUntilChanged())
+        const distinctSub = myArrayWithDuplicatesInARow.pipe(distinctUntilChanged())
             // output: 1,2,3,1,2,3
             .subscribe((val) => console.log("DISTINCT SUB:", val));
 
@@ -40,8 +39,7 @@ export class RxjsDistinctUntilChangedPoc {
             sampleObject,
         ]);
         // only out distinct objects, based on last emitted value
-        const nonDistinctObjects = myArrayWithDuplicateObjects.pipe(
-            distinctUntilChanged())
+        const nonDistinctObjects = myArrayWithDuplicateObjects.pipe(distinctUntilChanged())
             // output: 'DISTINCT OBJECTS: {name: 'Test'}
             .subscribe((val) => console.log("DISTINCT OBJECTS:", val));
     }
