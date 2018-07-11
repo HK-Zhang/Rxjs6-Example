@@ -1,4 +1,4 @@
-﻿import { from, Observable, of } from "rxjs";
+﻿import { from, of } from "rxjs";
 import { debounceTime, delay, flatMap } from "rxjs/operators";
 
 export class DebounceTimePoc {
@@ -17,11 +17,10 @@ export class DebounceTimePoc {
         ];
 
         // Delay each item by time and project value;
+        const mapping = flatMap((item: any) => of(item.value).pipe(delay(item.time)));
+
         const source = from(times).pipe(
-            flatMap((item) => {
-                return of(item.value).pipe(
-                    delay(item.time));
-            })
+            mapping
             , debounceTime(500 /* ms */));
 
         const subscription = source.subscribe(
