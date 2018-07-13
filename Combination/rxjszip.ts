@@ -1,13 +1,13 @@
-import { interval, Observable, of, range, zip } from "rxjs";
-import { delay, take, zip as zipOp } from "rxjs/operators";
+import { interval, of, range, zip } from "rxjs";
+import { delay, take } from "rxjs/operators";
 
 export class ZipPoc {
 
     public test() {
         // this.func1();
         // this.func2();
-        // this.func3();
-        this.func4();
+        this.func3();
+        // this.func4();
     }
 
     public func1() {
@@ -38,16 +38,19 @@ export class ZipPoc {
 
     public func3() {
         const source = of("src");
-        // const example = source.pipe(zipOp(range(1, 4)));
         const example = zip(source, range(1, 4));
         const subscribe = example.subscribe((val) => console.log(val));
+        // ["src", 1]
     }
 
     public func4() {
         const source = interval(1000);
-        // const example = source.pipe(zipOp(range(1, 4)));
         const example = zip(source, range(1, 4));
         const subscribe = example.subscribe((val) => console.log(val));
+        // [0, 1]
+        // [1, 2]
+        // [2, 3]
+        // [3, 4]
     }
 
 }
