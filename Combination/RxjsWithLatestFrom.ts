@@ -1,12 +1,12 @@
-﻿import { interval, Observable, of } from "rxjs";
+﻿import { interval, of } from "rxjs";
 import { map, withLatestFrom } from "rxjs/operators";
 
 
 export class WithLatestFromPoc {
     public test() {
-        this.func1();
+        // this.func1();
         // this.func2();
-        // this.func0();
+        this.func0();
     }
 
     public func0() {
@@ -20,6 +20,14 @@ export class WithLatestFromPoc {
             , getSecondSource);
 
         const result = combindSource.subscribe((x) => console.log(x));
+
+        /*
+        c
+        c
+        c
+        c
+        ...
+        */
     }
 
     public func1() {
