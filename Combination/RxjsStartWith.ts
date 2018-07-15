@@ -1,4 +1,4 @@
-﻿import { interval, Observable, of } from "rxjs";
+﻿import { interval, of } from "rxjs";
 import { scan, startWith } from "rxjs/operators";
 
 
