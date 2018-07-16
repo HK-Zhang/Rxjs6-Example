@@ -23,7 +23,7 @@ export class ZipPoc {
             sourceFour.pipe(delay(3000)),
         );
         // output: ["Hello", "World!", "Goodbye", "World!"]
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -33,20 +33,20 @@ export class ZipPoc {
         // when one observable completes no more values will be emitted
         const example = zip(v, v.pipe(take(2)));
         // output: [0,0]...[1,1]
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func3() {
         const source = of("src");
         const example = zip(source, range(1, 4));
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
         // ["src", 1]
     }
 
     public func4() {
         const source = interval(1000);
         const example = zip(source, range(1, 4));
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
         // [0, 1]
         // [1, 2]
         // [2, 3]

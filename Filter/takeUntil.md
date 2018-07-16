@@ -19,7 +19,7 @@ const after5sec = takeUntil(timer(5000));
 // when timer emits after 5s, complete source
 const example = source.pipe(after5sec);
 // output: 0,1,2,3
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 ```
 
 ##### Example 2: Take the first 5 even numbers
@@ -57,5 +57,5 @@ const example = evenSource.pipe(
     Even number (4) : 6
     Even number (5) : 8
 */
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 ```

@@ -21,7 +21,7 @@ export class ExhaustMapPoc {
             // emit immediately
             of(true),
         ).pipe(
-        // .do((val) => console.log(val))
+        // .do(console.log)
             /*
              *  The first emitted value (of(true)) will be mapped
              *  to an interval observable emitting 1 value every
@@ -37,7 +37,7 @@ export class ExhaustMapPoc {
             // .switchMap((_) => interval2.take(10))
             // .mergeMap((_) => interval2.take(10))
             // output: 0, 1, 2, 3, 4
-            .subscribe((val) => console.log(val));
+            .subscribe(console.log);
     }
 
     public func2() {

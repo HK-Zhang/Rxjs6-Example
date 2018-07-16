@@ -22,7 +22,7 @@ export class DebouncePoc {
             In this example, all values but the last will be omitted
             output: 'Last will display'
         */
-        const subscribe = debouncedExample.subscribe((val) => console.log(val));
+        const subscribe = debouncedExample.subscribe(console.log);
     }
 
     public func2() {

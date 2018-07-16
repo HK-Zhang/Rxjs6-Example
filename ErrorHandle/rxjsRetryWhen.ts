@@ -42,7 +42,7 @@ export class RetryWhenPoc {
           "Value 6 was too high!"
           --Wait 5 seconds then repeat
         */
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -76,7 +76,7 @@ export class RetryWhenPoc {
             , retryHard
             , logError);
 
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
 
         /*
         output:

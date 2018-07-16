@@ -23,7 +23,7 @@ export class TimeoutPoc {
             *  "Request timed out after: 3000"
             *  "Request Complete!"
             */
-            .subscribe((val) => console.log(val));
+            .subscribe(console.log);
     }
 
 }

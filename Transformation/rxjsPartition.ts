@@ -24,7 +24,7 @@ export class PartitionPoc {
         const subscribe = merge(
             evens.pipe(map((val) => `Even: ${val}`)),
             odds.pipe(map((val) => `Odd: ${val}`)),
-        ).subscribe((val) => console.log(val));
+        ).subscribe(console.log);
     }
 
     public func2() {
@@ -50,7 +50,7 @@ export class PartitionPoc {
         const subscribe = merge(
             success.pipe(map((val) => `Success! ${val.success}`)),
             error.pipe(map((val) => `Error! ${val.error}`)),
-        ).subscribe((val) => console.log(val));
+        ).subscribe(console.log);
     }
 
 }

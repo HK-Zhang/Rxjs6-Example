@@ -40,7 +40,7 @@ export class WindowTogglePoc {
             21
             22
           */
-            .subscribe((val) => console.log(val));
+            .subscribe(console.log);
     }
 
 

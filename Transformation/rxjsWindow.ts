@@ -26,6 +26,6 @@ export class WindowPoc {
           ...
         */
         const subscribe = count.subscribe((val) => console.log(`Window ${val}:`));
-        const subscribeTwo = example.pipe(mergeAll()).subscribe((val) => console.log(val));
+        const subscribeTwo = example.pipe(mergeAll()).subscribe(console.log);
     }
 }

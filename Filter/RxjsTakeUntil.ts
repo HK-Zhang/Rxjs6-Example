@@ -18,7 +18,7 @@ export class TakeUntilPoc {
         // when timer emits after 5s, complete source
         const example = source.pipe(after5sec);
         // output: 0,1,2,3
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -51,7 +51,7 @@ export class TakeUntilPoc {
             Even number (4) : 6
             Even number (5) : 8
         */
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
 

@@ -29,7 +29,7 @@ export class MergeAllPoc {
           "Result: 2"
           "Result: 3"
         */
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -58,7 +58,7 @@ export class MergeAllPoc {
         const example = interval$.pipe(
             takeThree
             , mergeAll(2))
-            .subscribe((val) => console.log(val));
+            .subscribe(console.log);
         /*
           The subscription is completed once the operator emits all values.
         */

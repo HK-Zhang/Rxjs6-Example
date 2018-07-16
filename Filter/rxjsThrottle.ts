@@ -19,7 +19,7 @@ export class ThrottlePoc {
         const example = source.pipe(throttleTwoSec);
 
         // output: 0...3...6...9
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -39,7 +39,7 @@ export class ThrottlePoc {
             throttle(promise)
             , output);
 
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
 
         // output:
         // Throttled off Promise: 0

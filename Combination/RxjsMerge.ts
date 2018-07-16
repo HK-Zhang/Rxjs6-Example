@@ -26,7 +26,7 @@ export class MergePoc {
             fourth.pipe(mapTo("FOURTH")),
         );
         // output: "FOURTH", "THIRD", "SECOND!", "FOURTH", "FIRST!", "THIRD", "FOURTH"
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -38,7 +38,7 @@ export class MergePoc {
         // const example = first.pipe(mergeOp(second));
         const example = merge(first, second);
         // output: 0,1,0,2....
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
 }

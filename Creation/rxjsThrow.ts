@@ -12,7 +12,7 @@ export class ThrowPoc {
         const subscribe = source.subscribe({
             complete: () => console.log("Complete!"),
             error: (val) => console.log(`Error: ${val}`),
-            next: (val) => console.log(val),
+            next: console.log,
         });
     }
 }

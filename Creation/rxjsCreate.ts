@@ -18,7 +18,7 @@ export class CreatePoc {
         });
 
         // output: 'Hello'...'World'
-        const subscribe = hello.subscribe((val) => console.log(val));
+        const subscribe = hello.subscribe(console.log);
     }
 
     public func2() {
@@ -40,7 +40,7 @@ export class CreatePoc {
             };
         });
         // output: 0...2...4...6...8
-        const subscribe = evenNumbers.subscribe((val) => console.log(val));
+        const subscribe = evenNumbers.subscribe(console.log);
         // unsubscribe after 10 seconds
         setTimeout(() => {
             subscribe.unsubscribe();

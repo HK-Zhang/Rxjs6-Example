@@ -13,7 +13,7 @@ export class MaptoPoc {
         // map all emissions to one value
         const example = source.pipe(mapTo("HELLO WORLD!"));
         // output: 'HELLO WORLD!'...'HELLO WORLD!'...'HELLO WORLD!'...
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {

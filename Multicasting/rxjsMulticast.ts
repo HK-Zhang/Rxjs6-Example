@@ -26,8 +26,8 @@ export class MulticastPoc {
           "Result!"
           ...
         */
-        const subscriberOne = multi.subscribe((val) => console.log(val));
-        const subscriberTwo = multi.subscribe((val) => console.log(val));
+        const subscriberOne = multi.subscribe(console.log);
+        const subscriberTwo = multi.subscribe(console.log);
         // subscribe subject to source
         (multi as ConnectableObservable<any>).connect();
     }

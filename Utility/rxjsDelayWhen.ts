@@ -16,7 +16,7 @@ export class DelayWhenPoc {
         const delayWhenExample = message.pipe(delayWhen(delayForFiveSeconds));
         // log values, delayed for 5 seconds
         // ex. output: 5s....1...2...3
-        const subscribe = delayWhenExample.subscribe((val) => console.log(val));
+        const subscribe = delayWhenExample.subscribe(console.log);
     }
 
 }

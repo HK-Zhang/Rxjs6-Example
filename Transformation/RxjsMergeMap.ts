@@ -61,7 +61,7 @@ export class MergeMapPoc {
                 [2, 2, 0, 0] <--3rd inner observable
                 [3, 3, 0, 0] <--4th inner observable
         */
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func3() {

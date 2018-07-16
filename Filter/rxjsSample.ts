@@ -16,7 +16,7 @@ export class SamplePoc {
         const sampling = sample(interval(2000));
         const example = source.pipe(sampling);
         // output: 2..4..6..8..
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -30,7 +30,7 @@ export class SamplePoc {
         const sampling = sample(interval(2500));
         const example = source.pipe(sampling);
         // output: ["Joe", 0]...["Frank", 1]...........
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
 

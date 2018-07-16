@@ -39,7 +39,7 @@ export class SwithMapPoc {
         // switch to new inner observable when source emits, emit items that are emitted
         const example = source.pipe(switchMap(() => interval(500)));
         // output: 0,1,2,3,4,5,6,7,8,9...0,1,2,3,4,5,6,7,8
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func3() {
@@ -56,7 +56,7 @@ export class SwithMapPoc {
             {outerValue: 1, innerValue: 0, outerIndex: 1, innerIndex: 0}
             {outerValue: 1, innerValue: 1, outerIndex: 1, innerIndex: 1}
         */
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func4() {

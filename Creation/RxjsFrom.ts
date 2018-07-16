@@ -14,7 +14,7 @@ export class FromPoc {
         // emit array as a sequence of values
         const arraySource = from([1, 2, 3, 4, 5]);
         // output: 1,2,3,4,5
-        const subscribe = arraySource.subscribe((val) => console.log(val));
+        const subscribe = arraySource.subscribe(console.log);
     }
 
     public func2() {
@@ -23,14 +23,14 @@ export class FromPoc {
             new Promise((resolve) => resolve("Hello World!")),
         );
         // output: 'Hello World'
-        const subscribe = promiseSource.subscribe((val) => console.log(val));
+        const subscribe = promiseSource.subscribe(console.log);
     }
 
     public func3() {
         // emit string as a sequence
         const source = from("Hello World");
         // output: 'H','e','l','l','o',' ','W','o','r','l','d'
-        const subscribe = source.subscribe((val) => console.log(val));
+        const subscribe = source.subscribe(console.log);
     }
 
     public func4() {
@@ -41,6 +41,6 @@ export class FromPoc {
 
         const mapSource = from(map);
         // output: [1, 'Hi'], [2, 'Bye']
-        const subscribe = mapSource.subscribe((val) => console.log(val));
+        const subscribe = mapSource.subscribe(console.log);
     }
 }

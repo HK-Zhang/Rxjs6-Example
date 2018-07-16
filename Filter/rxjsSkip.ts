@@ -15,7 +15,7 @@ export class SkipPoc {
         // skip the first 5 emitted values
         const example = source.pipe(skip(5));
         // output: 5...6...7...8........
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {

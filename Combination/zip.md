@@ -32,7 +32,7 @@ const example = zip(
     sourceFour.pipe(delay(3000)),
 );
 // output: ["Hello", "World!", "Goodbye", "World!"]
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 ```
 
 ##### Example 2: zip when 1 observable completes
@@ -46,7 +46,7 @@ const v = interval(1000);
 // when one observable completes no more values will be emitted
 const example = zip(v, v.pipe(take(2)));
 // output: [0,0]...[1,1]
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 ```
 
 ##### Example 3
@@ -57,7 +57,7 @@ import { delay, take } from "rxjs/operators";
 
 const source = of("src");
 const example = zip(source, range(1, 4));
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 // ["src", 1]
 ```
 
@@ -66,7 +66,7 @@ const subscribe = example.subscribe((val) => console.log(val));
 ```ts
 const source = interval(1000);
 const example = zip(source, range(1, 4));
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 // [0, 1]
 // [1, 2]
 // [2, 3]

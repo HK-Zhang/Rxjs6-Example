@@ -27,7 +27,7 @@ export class GroupByPoc {
           [{age: 30, name: "Joe"}]
           [{age: 35, name: "Sarah"}]
         */
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
 }

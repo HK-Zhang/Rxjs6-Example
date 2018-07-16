@@ -16,7 +16,7 @@ export class ConcatMapToPoc {
         const example = interval$.pipe(concatMapTo(message, (time, msg) => `${time} ${msg}`));
         // log values
         // output: '0 Second(s) elapsed', '1 Second(s) elapsed'
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -45,6 +45,6 @@ export class ConcatMapToPoc {
                   continued...
 
         */
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 }

@@ -16,7 +16,7 @@ export class EveryPoc {
         const isEveryEven = every((val: number) => val % 2 === 0);
         const example = source.pipe(isEveryEven);
         // output: false
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -27,6 +27,6 @@ export class EveryPoc {
         const isEveryEven = every((val: number) => val % 2 === 0);
         const example = allEvens.pipe(isEveryEven);
         // output: true
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 }

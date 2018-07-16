@@ -10,7 +10,7 @@ export class TimerPoc {
         // emit 0 after 1 second then complete, since no second argument is supplied
         const source = timer(1000);
         // output: 0
-        const subscribe = source.subscribe((val) => console.log(val));
+        const subscribe = source.subscribe(console.log);
     }
 
     public func2() {
@@ -21,6 +21,6 @@ export class TimerPoc {
 */
         const source = timer(1000, 2000);
         // output: 0,1,2,3,4,5......
-        const subscribe = source.subscribe((val) => console.log(val));
+        const subscribe = source.subscribe(console.log);
     }
 }

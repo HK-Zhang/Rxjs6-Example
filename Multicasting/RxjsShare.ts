@@ -24,8 +24,8 @@ export class SharePoc {
           "***SIDE EFFECT***"
           "***RESULT***"
         */
-        const subscribe = example.subscribe((val) => console.log(val));
-        const subscribeTwo = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
+        const subscribeTwo = example.subscribe(console.log);
 
         // share observable among subscribers
         const sharedExample = example.pipe(share());
@@ -36,8 +36,8 @@ export class SharePoc {
           "***RESULT***"
           "***RESULT***"
         */
-        const subscribeThree = sharedExample.subscribe((val) => console.log(val));
-        const subscribeFour = sharedExample.subscribe((val) => console.log(val));
+        const subscribeThree = sharedExample.subscribe(console.log);
+        const subscribeFour = sharedExample.subscribe(console.log);
     }
 
 

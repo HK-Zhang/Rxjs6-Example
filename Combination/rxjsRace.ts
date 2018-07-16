@@ -1,12 +1,12 @@
-import { interval, Observable, of, race } from "rxjs";
-import { delay, map, mapTo } from "rxjs/operators";
+import { interval, of, race } from "rxjs";
+import { catchError, delay, map, mapTo } from "rxjs/operators";
 
 
 export class RacePoc {
 
     public test() {
-        this.func1();
-        // this.func2();
+        // this.func1();
+        this.func2();
     }
 
     public func1() {
@@ -24,7 +24,7 @@ export class RacePoc {
             interval(2500),
         );
         // output: "1s won!"..."1s won!"...etc
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -40,10 +40,13 @@ export class RacePoc {
 
         const second = of("second").pipe(delay(200));
         const third = of("third").pipe(delay(300));
+        const errorHandler = catchError((error) => of(`Bad: ${error}`));
 
-        const race$ = race(first, second, third).subscribe((val) =>
-            console.log(val),
-        );
+        const race$ = race(first, second, third)
+        .pipe(errorHandler)
+        .subscribe(console.log);
+
+        // => Bad: Error: error
     }
 
 }

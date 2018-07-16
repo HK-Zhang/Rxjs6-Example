@@ -12,7 +12,7 @@ export class MapPoc {
         // add 10 to each value
         const example: Observable<number> = source.pipe(map((val) => val + 10));
         // output: 11,12,13,14,15
-        const subscribe: Subscription = example.subscribe((val) => console.log(val));
+        const subscribe: Subscription = example.subscribe(console.log);
     }
 
     public func2(): void {
@@ -25,6 +25,6 @@ export class MapPoc {
         // grab each persons name
         const example = source.pipe(map((person) => person.name));
         // output: "Joe","Frank","Ryan"
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 }

@@ -17,7 +17,7 @@ export class DoPoc {
             , tap((val) => console.log(`AFTER MAP: ${val}`)));
         // 'do' does not transform values
         // output: 11...12...13...14...15
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {

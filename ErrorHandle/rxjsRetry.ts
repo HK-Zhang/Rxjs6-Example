@@ -29,7 +29,7 @@ export class RetryPoc {
         */
         const subscribe = example.subscribe({
             error: (val) => console.log(`${val}: Retried 2 times then quit!`),
-            next: (val) => console.log(val),
+            next: console.log,
         });
     }
 

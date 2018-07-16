@@ -39,7 +39,7 @@ export class FirstPoc {
         );
         const example = source.pipe(selectFirstEven);
         // output: "First even: 2 at index: 1"
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func4() {
@@ -49,7 +49,7 @@ export class FirstPoc {
         const mapping = map((val) => `Value: ${val}`);
         const example = source.pipe(firstOver5, mapping);
         // output: 'Nothing'
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
 }

@@ -19,7 +19,7 @@ export class ThrottleTimePoc {
         */
         const example = source.pipe(throttleTime(5000));
         // output: 0...6...12
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -32,7 +32,7 @@ export class ThrottleTimePoc {
         // throttle in middle of emitted values
         const example = source.pipe(throttleTime(1200));
         // output: 0...1...4...4...8...7
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
 

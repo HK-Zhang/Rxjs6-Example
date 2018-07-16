@@ -51,5 +51,5 @@ const lastOver4 = last<any>(
 );
 const exampleTwo = source.pipe(lastOver4);
 // output: 'The highest emitted number was 5'
-const subscribeTwo = exampleTwo.subscribe((val) => console.log(val));
+const subscribeTwo = exampleTwo.subscribe(console.log);
 ```

@@ -28,6 +28,6 @@ export class FromPromisePoc {
         const example = source.pipe(mergeWithMyPromise);
 
         // output: 'Error: Rejected!', 'Resolved!'
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 }

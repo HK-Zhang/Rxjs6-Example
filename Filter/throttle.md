@@ -22,7 +22,7 @@ const throttleTwoSec = throttle((val) => interval(2000));
 const example = source.pipe(throttleTwoSec);
 
 // output: 0...3...6...9
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 ```
 
 ##### Example 2: Throttle with promise
@@ -45,7 +45,7 @@ const example = source.pipe(
     throttle(promise)
     , output);
 
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 
         // output:
         // Throttled off Promise: 0

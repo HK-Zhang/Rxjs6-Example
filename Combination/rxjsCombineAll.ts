@@ -41,7 +41,7 @@ export class CombineAllPoc {
           ["Result (0): 4", "Result (1): 3"]
           ["Result (0): 4", "Result (1): 4"]
         */
-        const subscribe = combined.subscribe((val) => console.log(val));
+        const subscribe = combined.subscribe(console.log);
     }
 
 

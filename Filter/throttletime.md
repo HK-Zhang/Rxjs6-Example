@@ -40,6 +40,6 @@ const source = merge(
 // throttle in middle of emitted values
 const example = source.pipe(throttleTime(1200));
 // output: 0...1...4...4...8...7
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 
 ```

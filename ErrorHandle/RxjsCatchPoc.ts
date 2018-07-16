@@ -16,7 +16,7 @@ export class CatchPoc {
         const errorHandler = catchError((val) => of(`I caught: ${val}`));
         const example = source.pipe(errorHandler);
         // output: 'I caught: This is an error'
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -32,7 +32,7 @@ export class CatchPoc {
         const example = source.pipe(
             flatMap(() => promise$));
         // output: 'Bad Promise: Rejected'
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func3() {
@@ -50,6 +50,6 @@ export class CatchPoc {
 
         const example = source.pipe(flatMap(() => promise$));
         // output: 'Approve!'
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 }

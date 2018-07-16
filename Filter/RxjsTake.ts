@@ -16,7 +16,7 @@ export class TakePoc {
         // take the first emitted value then complete
         const example = source.pipe(take(1));
         // output: 1
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -25,7 +25,7 @@ export class TakePoc {
         // take the first 5 emitted values
         const example = interval$.pipe(take(5));
         // output: 0,1,2,3,4
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
 

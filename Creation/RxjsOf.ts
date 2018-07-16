@@ -16,7 +16,7 @@ export class OfPoc {
         // emits any number of provided values in sequence
         let source = of(1, 2, 3, 4, 5);
         // output: 1,2,3,4,5
-        const subscribe = source.subscribe((val) => console.log(val));
+        const subscribe = source.subscribe(console.log);
 
         source = of(6, 7);
     }
@@ -35,6 +35,6 @@ export class OfPoc {
             return "Hello";
         });
         // output: {name: 'Brian}, [1,2,3], function hello() { return 'Hello' }
-        const subscribe = source.subscribe((val) => console.log(val));
+        const subscribe = source.subscribe(console.log);
     }
 }

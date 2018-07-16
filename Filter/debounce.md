@@ -26,7 +26,7 @@ const debouncedExample = example.pipe(debouce1s);
     In this example, all values but the last will be omitted
     output: 'Last will display'
 */
-const subscribe = debouncedExample.subscribe((val) => console.log(val));
+const subscribe = debouncedExample.subscribe(console.log);
 ```
 
 ##### Example 2: Debounce at increasing interval

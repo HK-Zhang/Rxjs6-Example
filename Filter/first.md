@@ -51,7 +51,7 @@ const selectFirstEven = first<any>(
 );
 const example = source.pipe(selectFirstEven);
 // output: "First even: 2 at index: 1"
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 ```
 
 ##### Example 4: Utilizing default value
@@ -66,5 +66,5 @@ const firstOver5 = first<any>((val) => val > 5, "Nothing");
 const mapping = map((val) => `Value: ${val}`);
 const example = source.pipe(firstOver5, mapping);
 // output: 'Nothing'
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 ```

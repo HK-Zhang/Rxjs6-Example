@@ -14,7 +14,7 @@ export class DefaultIfEmptyPoc {
         const setDefault = defaultIfEmpty("Observable.of() Empty!");
         const exampleOne = empty$.pipe(setDefault);
         // output: 'Observable.of() Empty!'
-        const subscribe = exampleOne.subscribe((val) => console.log(val));
+        const subscribe = exampleOne.subscribe(console.log);
     }
 
     public func2() {
@@ -24,6 +24,6 @@ export class DefaultIfEmptyPoc {
         const setDefault = defaultIfEmpty("Observable.empty()!");
         const example = empty$.pipe(setDefault);
         // output: 'Observable.empty()!'
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 }

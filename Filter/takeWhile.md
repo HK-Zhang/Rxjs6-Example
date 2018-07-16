@@ -21,7 +21,7 @@ const takeLE4 = takeWhile((val) => val <= 4);
 
 const example = source.pipe(takeLE4);
 // output: 1,2,3,4
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 ```
 
 ##### Example 2: Difference between takeWhile() and filter()

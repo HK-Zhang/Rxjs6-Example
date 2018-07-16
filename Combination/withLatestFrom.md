@@ -32,7 +32,7 @@ const example = source.pipe(
   "First Source (5s): 2 Second Source (1s): 14"
   ...
 */
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 ```
 
 ##### Example 2: Slower second source
@@ -60,7 +60,7 @@ const example = secondSource.pipe(
   "Source (1s): 6 Latest From (5s): 0"
   ...
 */
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 ```
 
 ##### Example 3

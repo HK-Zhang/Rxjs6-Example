@@ -16,7 +16,7 @@ export class SkipUntilPoc {
         const skip5sec = skipUntil(timer(6000));
         const example = source.pipe(skip5sec);
         // output: 5...6...7...8........
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
 }

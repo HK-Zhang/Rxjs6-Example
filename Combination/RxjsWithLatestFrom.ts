@@ -49,7 +49,7 @@ export class WithLatestFromPoc {
           "First Source (5s): 2 Second Source (1s): 14"
           ...
         */
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -72,7 +72,7 @@ export class WithLatestFromPoc {
           "Source (1s): 6 Latest From (5s): 0"
           ...
         */
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
 }

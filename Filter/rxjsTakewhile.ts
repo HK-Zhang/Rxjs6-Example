@@ -16,7 +16,7 @@ export class TakewhilePoc {
 
         const example = source.pipe(takeLE4);
         // output: 1,2,3,4
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {

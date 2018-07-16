@@ -33,7 +33,7 @@ export class WindowCountPoc {
             6
             7
           */
-            .subscribe((val) => console.log(val));
+            .subscribe(console.log);
     }
 
 

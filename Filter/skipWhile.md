@@ -18,5 +18,5 @@ const source = interval(1000);
 const skipL5 = skipWhile((val) => val < 5);
 const example = source.pipe(skipL5);
 // output: 5...6...7...8........
-const subscribe = example.subscribe((val) => console.log(val));
+const subscribe = example.subscribe(console.log);
 ```

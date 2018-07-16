@@ -18,7 +18,7 @@ export class DelayPoc {
             example.pipe(mapTo("World!"), delay(3000)),
         );
         // output: 'Hello'...'World!'...'Goodbye'...'World!'
-        const subscribe = message.subscribe((val) => console.log(val));
+        const subscribe = message.subscribe(console.log);
     }
 
 }

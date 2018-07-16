@@ -29,7 +29,7 @@ export class WindowTimePoc {
             4
             5
           */
-            .subscribe((val) => console.log(val));
+            .subscribe(console.log);
     }
 
 

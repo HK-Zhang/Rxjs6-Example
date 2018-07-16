@@ -33,7 +33,7 @@ export class WindowWhenPoc {
             8
             9
           */
-            .subscribe((val) => console.log(val));
+            .subscribe(console.log);
     }
 
 }

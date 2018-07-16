@@ -17,7 +17,7 @@ export class PluckPoc {
         // grab names
         const example = source.pipe(pluck("name"));
         // output: "Joe", "Sarah"
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -29,7 +29,7 @@ export class PluckPoc {
         // grab title property under job
         const example = source.pipe(pluck("job", "title"));
         // output: "Developer" , undefined
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
 }

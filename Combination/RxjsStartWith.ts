@@ -15,7 +15,7 @@ export class StartWithPoc {
         // start with 0
         const example = source.pipe(startWith(0));
         // output: 0,1,2,3
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2() {
@@ -34,7 +34,7 @@ export class StartWithPoc {
           "Hello World! Goodbye"
           "Hello World! Goodbye World!"
         */
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
     public func3() {
@@ -43,7 +43,7 @@ export class StartWithPoc {
         // start with -3, -2, -1
         const example = source.pipe(startWith(-3, -2, -1));
         // output: -3, -2, -1, 0, 1, 2....
-        const subscribe = example.subscribe((val) => console.log(val));
+        const subscribe = example.subscribe(console.log);
     }
 
 }
