@@ -1,4 +1,4 @@
-var Promise = require("promise");
+
 
 import { interval, Observable, of } from "rxjs";
 import { delay, map, merge, mergeAll, take } from "rxjs/operators";

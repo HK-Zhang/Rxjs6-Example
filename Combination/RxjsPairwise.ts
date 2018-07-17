@@ -1,4 +1,4 @@
-﻿import { interval, Observable } from "rxjs";
+﻿import { interval } from "rxjs";
 import { pairwise } from "rxjs/operators";
 
 
@@ -9,7 +9,8 @@ export class PairwisePoc {
 
     public func1() {
         interval(1000).pipe(pairwise())
-            .subscribe((pair) => console.log(pair)); // pair[1] - pair[0]
+            .subscribe(console.log); // pair[1] - pair[0]
+        // => [0, 1] [1, 2] ...
     }
 
 }

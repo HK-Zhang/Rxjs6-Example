@@ -1,6 +1,5 @@
 import { interval } from "rxjs";
 import { map, throttle } from "rxjs/operators";
-var Promise = require("promise");
 
 
 export class ThrottlePoc {

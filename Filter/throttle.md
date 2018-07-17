@@ -12,7 +12,7 @@
 ```ts
 import { interval, Observable } from "rxjs";
 import { map, throttle } from "rxjs/operators";
-var Promise = require("promise");
+
 
 // emit value every 1 second
 const source = interval(1000);

@@ -1,4 +1,4 @@
-﻿var Promise = require("promise");
+﻿
 import { from, Observable, of, throwError, timer } from "rxjs";
 import { catchError, flatMap } from "rxjs/operators";
 
