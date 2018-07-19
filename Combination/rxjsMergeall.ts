@@ -1,7 +1,5 @@
-
-
-import { interval, Observable, of } from "rxjs";
-import { delay, map, merge, mergeAll, take } from "rxjs/operators";
+import { interval, of } from "rxjs";
+import { delay, map, mergeAll, take } from "rxjs/operators";
 
 export class MergeAllPoc {
 
