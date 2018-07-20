@@ -1,5 +1,5 @@
-﻿import { interval, merge, Observable } from "rxjs";
-import { mapTo, merge as mergeOp } from "rxjs/operators";
+﻿import { interval, merge} from "rxjs";
+import { mapTo } from "rxjs/operators";
 
 
 export class MergePoc {
