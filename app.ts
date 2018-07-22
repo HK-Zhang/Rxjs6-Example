@@ -31,7 +31,7 @@ import { DefaultIfEmptyPoc, EveryPoc, IIFPoc } from "./Conditional";
 import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } from "./Subject";
 
 let obj: any;
-let rxjsMethod = "forkJoin";
+let rxjsMethod = "concat";
 
 switch (rxjsMethod) {
     case "pipe":
