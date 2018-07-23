@@ -1,4 +1,4 @@
-﻿import { combineLatest, interval, Observable } from "rxjs";
+﻿import { combineLatest, interval } from "rxjs";
 
 export class CombineLatestPoc {
     public test() {
@@ -12,7 +12,9 @@ export class CombineLatestPoc {
         combineLatest(
             intervalOne$,
             intervalTwo$,
-        ).subscribe((all) => console.log(all));
+        ).subscribe(console.log);
+
+        // => [0, 0] [1, 0] [2, 0] [2, 1] [3, 1] [4, 1]
     }
 
 }
