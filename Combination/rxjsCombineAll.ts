@@ -1,4 +1,4 @@
-import { interval, Observable } from "rxjs";
+import { interval } from "rxjs";
 import { combineAll, map, take } from "rxjs/operators";
 
 
@@ -14,15 +14,15 @@ export class CombineAllPoc {
         // emit every 1s, take 2
         const source = interval(1000).pipe(take(2));
 
-        const composeRst = (val) => map((i) => `Result (${val}): ${i}`);
+        const mapping = (val) => map((i) => `Result (${val}): ${i}`);
 
-        const secondSource = (val) => interval(1000).pipe(
-            composeRst(val)
+        const buildStream = (val) => interval(1000).pipe(
+            mapping(val)
             , take(5));
 
-        const toSecondSource = map((val) => secondSource(val));
+        const shapping = map((val) => buildStream(val));
         // map each emitted value from source to interval observable that takes 5 values
-        const example = source.pipe(toSecondSource);
+        const example = source.pipe(shapping);
         /*
           2 values from source will map to 2 (inner) interval observables that emit every 1s
           combineAll uses combineLatest strategy, emitting the last value from each
