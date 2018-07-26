@@ -1,4 +1,4 @@
-﻿import { Observable, timer } from "rxjs";
+﻿import { timer } from "rxjs";
 
 export class TimerPoc {
     public test() {
