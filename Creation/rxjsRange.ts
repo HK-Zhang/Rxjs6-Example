@@ -1,4 +1,4 @@
-﻿import { Observable, range } from "rxjs";
+﻿import { range } from "rxjs";
 
 export class RangePoc {
     public test() {
