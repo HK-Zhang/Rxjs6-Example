@@ -1,5 +1,4 @@
-﻿let Promise = require("promise");
-import { from, Observable, of } from "rxjs";
+﻿import { from, of } from "rxjs";
 import { catchError, mergeMap } from "rxjs/operators";
 
 export class FromPromisePoc {
@@ -23,9 +22,9 @@ export class FromPromisePoc {
         // catch and gracefully handle rejections
         const handleError = catchError((error) => of(`Error: ${error}`));
 
-        const mergeWithMyPromise = mergeMap((val) => from(myPromise(val)).pipe(handleError));
+        const merging = mergeMap((val) => from(myPromise(val)).pipe(handleError));
 
-        const example = source.pipe(mergeWithMyPromise);
+        const example = source.pipe(merging);
 
         // output: 'Error: Rejected!', 'Resolved!'
         const subscribe = example.subscribe(console.log);
