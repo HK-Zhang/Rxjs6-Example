@@ -8,11 +8,6 @@
 
 ##### Example 1: Observable from promise
 
-(
-[StackBlitz](https://stackblitz.com/edit/typescript-clpg1f?file=index.ts&devtoolsheight=100)
-| [jsBin](http://jsbin.com/tamofinujo/1/edit?js,console) |
-[jsFiddle](https://jsfiddle.net/btroncone/2czc5sae/) )
-
 ```ts
 import { from, of } from "rxjs";
 import { catchError, mergeMap } from "rxjs/operators";

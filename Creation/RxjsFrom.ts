@@ -1,6 +1,4 @@
-﻿import { from, Observable } from "rxjs";
-import * as Collections from "typescript-collections";
-const Promise = require("promise");
+﻿import { from } from "rxjs";
 
 export class FromPoc {
     public test() {
