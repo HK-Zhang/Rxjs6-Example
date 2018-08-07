@@ -1,4 +1,4 @@
-﻿import { interval, Observable, of, throwError } from "rxjs";
+﻿import { interval, of, throwError } from "rxjs";
 import { retry, switchMap } from "rxjs/operators";
 
 export class RetryPoc {
