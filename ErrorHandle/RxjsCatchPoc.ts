@@ -1,5 +1,5 @@
 ﻿
-import { from, Observable, of, throwError, timer } from "rxjs";
+import { from, of, throwError, timer } from "rxjs";
 import { catchError, flatMap } from "rxjs/operators";
 
 export class CatchPoc {
@@ -36,7 +36,7 @@ export class CatchPoc {
     }
 
     public func3() {
-        // create promise that immediately rejects
+        // create promise that immediately resolves
         const myBadPromise = () =>
             new Promise((resolve, reject) => resolve("Approve!"));
         // emit single value after 1 second
