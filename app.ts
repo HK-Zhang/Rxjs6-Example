@@ -31,7 +31,7 @@ import { DefaultIfEmptyPoc, EveryPoc, IIFPoc } from "./Conditional";
 import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } from "./Subject";
 
 let obj: any;
-let rxjsMethod = "retryWhen";
+let rxjsMethod = "iif";
 
 switch (rxjsMethod) {
     case "pipe":

@@ -1,4 +1,4 @@
-import { iif, Observable, of } from "rxjs";
+import { iif, of } from "rxjs";
 
 export class IIFPoc {
 
@@ -15,5 +15,8 @@ export class IIFPoc {
             (x) => console.log("Next: " + x),
             (err) => console.log("Error: " + err),
             () => console.log("Completed"));
+
+            // Next: 42
+            // Completed
     }
 }
