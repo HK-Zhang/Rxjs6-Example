@@ -24,14 +24,15 @@ import {
     SinglePoc, SkipPoc, SkipUntilPoc, SkipWhilePoc, TakePoc, TakeUntilPoc, TakewhilePoc, ThrottlePoc, ThrottleTimePoc,
 } from "./Filter";
 
-import { MulticastPoc, PublishPoc, SharePoc } from "./Multicasting";
+import { MulticastPoc, PublishPoc, SharePoc, ShareReplayPoc } from "./Multicasting";
 
 import { DefaultIfEmptyPoc, EveryPoc, IIFPoc } from "./Conditional";
 
 import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } from "./Subject";
 
 let obj: any;
-let rxjsMethod = "iif";
+// tslint:disable-next-line:prefer-const
+let rxjsMethod = "shareReplay";
 
 switch (rxjsMethod) {
     case "pipe":
@@ -273,6 +274,9 @@ switch (rxjsMethod) {
         break;
     case "BehaviorSubject":
         obj = new BehaviorSubjectPoc();
+        break;
+    case "shareReplay":
+        obj = new ShareReplayPoc();
         break;
     default:
         console.log("No demo for your requested methond.");
