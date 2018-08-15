@@ -1,4 +1,4 @@
-﻿import { ConnectableObservable, interval, Observable } from "rxjs";
+﻿import { ConnectableObservable, interval } from "rxjs";
 import { publish, tap } from "rxjs/operators";
 
 
