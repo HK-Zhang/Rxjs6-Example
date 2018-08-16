@@ -1,4 +1,4 @@
-﻿import { ConnectableObservable, interval, Observable, Subject } from "rxjs";
+﻿import { ConnectableObservable, interval, Subject } from "rxjs";
 import { mapTo, multicast, take, tap } from "rxjs/operators";
 
 export class MulticastPoc {
