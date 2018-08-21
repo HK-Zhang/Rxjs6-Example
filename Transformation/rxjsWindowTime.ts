@@ -1,4 +1,4 @@
-﻿import { Observable, timer } from "rxjs";
+﻿import { timer } from "rxjs";
 import { mergeAll, tap, windowTime} from "rxjs/operators";
 
 export class WindowTimePoc {
@@ -18,6 +18,7 @@ export class WindowTimePoc {
         const subscribeTwo = example.pipe(
             // window emits nested observable
             mergeAll())
+            .subscribe(console.log);
             /*
             output:
             "NEW WINDOW!"
@@ -29,7 +30,6 @@ export class WindowTimePoc {
             4
             5
           */
-            .subscribe(console.log);
     }
 
 
