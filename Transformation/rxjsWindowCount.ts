@@ -1,4 +1,4 @@
-﻿import { interval, Observable } from "rxjs";
+﻿import { interval } from "rxjs";
 import { mergeAll, tap,  windowCount} from "rxjs/operators";
 
 
@@ -20,6 +20,7 @@ export class WindowCountPoc {
         const subscribeTwo = example.pipe(
             // window emits nested observable
             mergeAll())
+            .subscribe(console.log);
             /*
             output:
             "NEW WINDOW!"
@@ -33,7 +34,6 @@ export class WindowCountPoc {
             6
             7
           */
-            .subscribe(console.log);
     }
 
 
