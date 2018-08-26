@@ -1,4 +1,4 @@
-﻿import { interval, Observable, timer } from "rxjs";
+﻿import { interval, timer } from "rxjs";
 import { mergeAll, scan, window } from "rxjs/operators";
 
 
