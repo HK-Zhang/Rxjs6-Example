@@ -22,15 +22,31 @@ export class SwithMapPoc {
         this.func();
         // this.func2();
         // this.func3();
+        // this.func4();
     }
 
     public func() {
+
+        const dolog = tap((id) => {
+            console.log("%carrived outer observable:", "color:green;", id);
+        });
+
+        const syncStream = switchMap((id) => createInnerObservable(id));
+
         timer(0, 10000).pipe(
-            tap((id) => {
-                console.log("%carrived outer observable:", "color:green;", id);
-            })
-            , switchMap((id) => createInnerObservable(id)))
+            dolog
+            , syncStream)
             .subscribe((innerValue) => console.log("subscribed value:", innerValue));
+
+            // =>
+            // arrived outer observable: 0
+            // created inner observable: 0
+            // subscribed value: inner:0
+            // subscribed value: inner:0
+            // subscribed value: inner:0
+            // arrived outer observable: 1
+            // canceled inner observable: 0
+            // created inner observable: 1
     }
 
     public func2() {
@@ -45,10 +61,13 @@ export class SwithMapPoc {
     public func3() {
         // emit immediately, then every 5s
         const source = timer(0, 5000);
-        // switch to new inner observable when source emits, invoke project function and emit values
-        const example = source.pipe(switchMap(
+
+        const syncStream = switchMap(
             () => interval(2000),
-            (outerValue, innerValue, outerIndex, innerIndex) => ({outerValue, innerValue, outerIndex, innerIndex})));
+            (outerValue, innerValue, outerIndex, innerIndex) => ({outerValue, innerValue, outerIndex, innerIndex}));
+
+        // switch to new inner observable when source emits, invoke project function and emit values
+        const example = source.pipe(syncStream);
         /*
             Output:
             {outerValue: 0, innerValue: 0, outerIndex: 0, innerIndex: 0}
@@ -61,8 +80,12 @@ export class SwithMapPoc {
 
     public func4() {
         const timer$ = interval(1000);
-        const result = timer$.pipe(switchMap((v) => of("a")));
+        const syncStream = switchMap((v) => of("a"));
+
+        const result = timer$.pipe(
+            syncStream);
 
         result.subscribe((x) => console.log(x));
+        // => a,a,a,a,a....
     }
 }
