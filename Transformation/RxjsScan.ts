@@ -52,16 +52,3 @@ export class ScanPoc {
         subject.next({ favoriteLanguage: "JavaScript" }); // {name: 'Joe', age: 30, favoriteLanguage: 'JavaScript'}
     }
 }
-
-const subject = new Subject();
-const concat = scan((acc, curr) => Object.assign({}, acc, curr), {});
-// scan example building an object over time
-const example = subject.pipe(concat);
-// log accumulated values
-const subscribe = example.subscribe((val) =>
-    console.log("Accumulated object:", val),
-);
-// next values into subject, adding properties to object
-subject.next({ name: "Joe" }); // {name: 'Joe'}
-subject.next({ age: 30 }); // {name: 'Joe', age: 30}
-subject.next({ favoriteLanguage: "JavaScript" }); // {name: 'Joe', age: 30, favoriteLanguage: 'JavaScript'}
