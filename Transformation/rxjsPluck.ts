@@ -1,5 +1,5 @@
-﻿import { from, merge, Observable } from "rxjs";
-import { map, pluck } from "rxjs/operators";
+﻿import { from } from "rxjs";
+import { pluck } from "rxjs/operators";
 
 
 export class PluckPoc {
