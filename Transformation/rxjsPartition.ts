@@ -1,4 +1,4 @@
-﻿import { from, merge, Observable, of } from "rxjs";
+﻿import { from, merge, of } from "rxjs";
 import { catchError, map, partition } from "rxjs/operators";
 
 export class PartitionPoc {
@@ -11,7 +11,9 @@ export class PartitionPoc {
     public func1() {
         const source = from([1, 2, 3, 4, 5, 6]);
         // first value is true, second false
-        const [evens, odds] = partition((val: number) => val % 2 === 0)(source);
+        const split = partition((val: number) => val % 2 === 0);
+        const [evens, odds] = split(source);
+        // const [evens, odds] = source.pipe(partition(val => val % 2 === 0));
         /*
           Output:
           "Even: 2"
@@ -30,16 +32,21 @@ export class PartitionPoc {
     public func2() {
         const source = from([1, 2, 3, 4, 5, 6]);
         // if greater than 3 throw
+        const judge = map((val) => {
+            if (val > 3) {
+                throw new Error(`${val} greater than 3!`);
+            }
+            return { success: val };
+        });
+
+        const handleError = catchError((val) => of({ error: val }));
+
         const example = source.pipe(
-            map((val) => {
-                if (val > 3) {
-                    throw new Error(`${val} greater than 3!`);
-                }
-                return { success: val };
-            })
-            , catchError((val) => of({ error: val })));
+            judge
+            , handleError);
         // split on success or error
-        const [success, error] = partition((res: any) => res.success)(example);
+        const split = partition((res: any) => res.success);
+        const [success, error] = split(example);
         /*
           Output:
           "Success! 1"
