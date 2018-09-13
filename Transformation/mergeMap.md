@@ -1,19 +1,20 @@
-﻿
+# mergeMap
+
+#### signature: `mergeMap(project: function: Observable, resultSelector: function: any, concurrent: number): Observable`
+
+## Map to observable, emit values.
+
+This operator is best used when you wish to flatten an inner observable but want
+to manually control the number of inner subscriptions.
+
+### Examples
+
+##### Example 1: switchMap with observable
+
+```ts
 import { interval, of, timer } from "rxjs";
 import { map, mapTo, mergeMap, switchMap, take } from "rxjs/operators";
 
-export class MergeMapPoc {
-    public test() {
-        // this.func0();
-        // this.func01();
-        // this.func1();
-        this.func3();
-    }
-
-    /**
-     * func0
-     */
-    public func0() {
         const letters = of("a", "b", "c");
 
         const mapping = (x) => map((i) => x);
@@ -27,9 +28,14 @@ export class MergeMapPoc {
         result.subscribe(console.log);
 
         // => c ,c ,c ...
-    }
+```
 
-    public func01() {
+##### Example 2: mergeMap with observable
+
+```ts
+import { interval, of, timer } from "rxjs";
+import { map, mapTo, mergeMap, switchMap, take } from "rxjs/operators";
+
         const letters = of("a", "b", "c");
 
         const mapping = (x) => map((i) => x);
@@ -43,9 +49,14 @@ export class MergeMapPoc {
         result.subscribe(console.log);
 
         // => a ,b ,c ...
-    }
+```
 
-    public func1() {
+##### Example 3: mergeMap with `resultSelector`
+
+```ts
+import { interval, of, timer } from "rxjs";
+import { map, mapTo, mergeMap, switchMap, take } from "rxjs/operators";
+
         // emit value every 1s
         const letters = of("a", "b", "c");
 
@@ -65,9 +76,14 @@ export class MergeMapPoc {
         result.subscribe(console.log);
 
         // => innera0, innerb0 ... innera4, innerb4, innerc0, innerc1 ...
-    }
+```
 
-    public func2() {
+##### Example 4: mergeMap with concurrent value
+
+```ts
+import { interval, of, timer } from "rxjs";
+import { map, mapTo, mergeMap, switchMap, take } from "rxjs/operators";
+
         // emit value every 1s
         const source = interval(1000);
 
@@ -88,13 +104,4 @@ export class MergeMapPoc {
                 [3, 3, 0, 0] <--4th inner observable
         */
         const subscribe = example.subscribe(console.log);
-    }
-
-    public func3() {
-        const post$ = of({ id: 1 });
-        const getPostInfo$ = timer(3000).pipe(mapTo({ title: "Post title" }));
-
-        const posts$ = post$.pipe(mergeMap((post) => getPostInfo$)).subscribe(console.log);
-        // => {title: "Post title"}
-    }
-}
+```
