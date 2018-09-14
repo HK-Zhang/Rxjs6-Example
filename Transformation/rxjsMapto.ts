@@ -1,4 +1,4 @@
-﻿import { interval, Observable } from "rxjs";
+﻿import { interval } from "rxjs";
 import { mapTo} from "rxjs/operators";
 
 export class MaptoPoc {
