@@ -1,4 +1,4 @@
-﻿import { from, Observable, Subscription } from "rxjs";
+﻿import { from } from "rxjs";
 import { map } from "rxjs/operators";
 
 export class MapPoc {
@@ -8,11 +8,12 @@ export class MapPoc {
 
     public func1(): void {
         // emit (1,2,3,4,5)
-        const source: Observable<number> = from([1, 2, 3, 4, 5]);
+        const source = from([1, 2, 3, 4, 5]);
         // add 10 to each value
-        const example: Observable<number> = source.pipe(map((val) => val + 10));
+        const add10 = map((val: number) => val + 10);
+        const example = source.pipe(add10);
         // output: 11,12,13,14,15
-        const subscribe: Subscription = example.subscribe(console.log);
+        const subscribe = example.subscribe(console.log);
     }
 
     public func2(): void {
@@ -20,10 +21,11 @@ export class MapPoc {
         const source = from([
             { name: "Joe", age: 30 },
             { name: "Frank", age: 20 },
-            { name: "Ryan", age: 50 },
+            { name: "Ryan", age: 50 }
         ]);
         // grab each persons name
-        const example = source.pipe(map((person) => person.name));
+        const selectname = map((person: any) => person.name);
+        const example = source.pipe(selectname);
         // output: "Joe","Frank","Ryan"
         const subscribe = example.subscribe(console.log);
     }
