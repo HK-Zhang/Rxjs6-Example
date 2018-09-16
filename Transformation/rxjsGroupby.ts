@@ -1,4 +1,4 @@
-﻿import { from, Observable } from "rxjs";
+﻿import { from } from "rxjs";
 import { groupBy, mergeMap, toArray } from "rxjs/operators";
 
 export class GroupByPoc {
@@ -17,17 +17,19 @@ export class GroupByPoc {
         // emit each person
         const source = from(people);
         // group by age
+        const groupByAge = groupBy((person: any) => person.age);
+        const mapToArray = mergeMap((group: any) => group.pipe(toArray()));
         const example = source.pipe(
-            groupBy((person) => person.age)
+            groupByAge
             // return each item in group as array
-            , mergeMap((group) => group.pipe(toArray())));
+            , mapToArray);
         /*
           output:
           [{age: 25, name: "Sue"},{age: 25, name: "Frank"}]
           [{age: 30, name: "Joe"}]
           [{age: 35, name: "Sarah"}]
         */
-        const subscribe = example.subscribe(console.log);
+        const subscribe = example.subscribe((val) => console.log(JSON.stringify(val)));
     }
 
 }
