@@ -32,7 +32,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 
 let obj: any;
 // tslint:disable-next-line:prefer-const
-let rxjsMethod = "groupBy";
+let rxjsMethod = "expand";
 
 switch (rxjsMethod) {
     case "pipe":

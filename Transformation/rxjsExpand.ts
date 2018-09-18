@@ -1,4 +1,4 @@
-﻿import { Observable, of } from "rxjs";
+﻿import { of } from "rxjs";
 import { expand, take } from "rxjs/operators";
 
 export class ExpandPoc {
@@ -10,14 +10,16 @@ export class ExpandPoc {
     public func1() {
         // emit 2
         const source = of(2);
+        const expandSrc = expand((val: number) => {
+            // 2,3,4,5,6
+            console.log(`Passed value: ${val}`);
+            // 3,4,5,6
+            return of(1 + val);
+        });
+
         const example = source
             // recursively call supplied function
-            .pipe(expand((val) => {
-                // 2,3,4,5,6
-                console.log(`Passed value: ${val}`);
-                // 3,4,5,6
-                return of(1 + val);
-            })
+            .pipe(expandSrc
             // call 5 times
             , take(5));
         /*
