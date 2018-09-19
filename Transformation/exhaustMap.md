@@ -1,13 +1,17 @@
-﻿import { interval, merge, of } from "rxjs";
+# exhaustMap
+
+#### signature: `exhaustMap(project: function, resultSelector: function): Observable`
+
+## Map to inner observable, ignore other values until that observable completes.
+
+### Examples
+
+##### Example 1: exhaustMap with interval
+
+```ts
+import { interval, merge, of } from "rxjs";
 import { delay, exhaustMap, take, tap } from "rxjs/operators";
 
-export class ExhaustMapPoc {
-  public test() {
-    // this.func1();
-    this.func2();
-  }
-
-  public func1() {
     const interval$ = interval(1000);
     const interval2 = interval(500);
     const delayedInterval = interval$.pipe(
@@ -40,16 +44,21 @@ export class ExhaustMapPoc {
       // .mergeMap((_) => interval2.take(10))
       // output: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
       .subscribe(console.log);
-  }
+```
 
-  public func2() {
+##### Example 2: Another exhaustMap with interval
+
+```ts
+import { interval, merge, of } from "rxjs";
+import { delay, exhaustMap, take, tap } from "rxjs/operators";
+
     const firstInterval = interval(1000).pipe(take(10));
     const secondInterval = interval(1000).pipe(take(3));
 
     const exhaustSub = firstInterval
       .pipe(
-        tap((i) => console.log(`Emission of first interval: ${i}`)),
-        exhaustMap((f) => {
+        tap(i => console.log(`Emission of first interval: ${i}`)),
+        exhaustMap(f => {
           console.log(`Emission Corrected of first interval: ${f}`);
           return secondInterval;
         }),
@@ -87,5 +96,4 @@ Emission Corrected of first interval: 9
 
           */
       .subscribe(console.log);
-  }
-}
+```
