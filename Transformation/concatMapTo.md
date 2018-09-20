@@ -1,14 +1,17 @@
-﻿import { interval, of } from "rxjs";
+# concatMapTo
+
+#### signature: `concatMapTo(observable: Observable, resultSelector: function): Observable`
+
+## Subscribe to provided observable when previous completes, emit values.
+
+### Examples
+
+##### Example 1: Map to basic observable (simulating request)
+
+```ts
+import { interval, of } from "rxjs";
 import { concatMapTo, take } from "rxjs/operators";
 
-
-export class ConcatMapToPoc {
-    public test() {
-        // this.func1();
-        this.func2();
-    }
-
-    public func1() {
         // emit value every 2 seconds
         const interval$ = interval(2000);
         const message = of("Second(s) elapsed!");
@@ -17,9 +20,14 @@ export class ConcatMapToPoc {
         // log values
         // output: '0 Second(s) elapsed', '1 Second(s) elapsed'
         const subscribe = example.subscribe(console.log);
-    }
+```
 
-    public func2() {
+##### Example 2: Using projection with `concatMap`
+
+```ts
+import { interval, of } from "rxjs";
+import { concatMapTo, take } from "rxjs/operators";
+
         // emit value every 2 seconds
         const interval$ = interval(2000);
         // emit value every second for 5 seconds
@@ -46,5 +54,4 @@ export class ConcatMapToPoc {
 
         */
         const subscribe = example.subscribe(console.log);
-    }
-}
+```
