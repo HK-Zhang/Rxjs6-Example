@@ -15,7 +15,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.92",
     "immutable": "^3.8.2",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.5",
     "rxjs": "^6.1.0",
     "typescript-collections": "^1.2.5"
   }
