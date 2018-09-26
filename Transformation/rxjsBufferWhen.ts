@@ -1,4 +1,4 @@
-﻿import { interval, Observable } from "rxjs";
+﻿import { interval } from "rxjs";
 import { bufferWhen } from "rxjs/operators";
 
 
