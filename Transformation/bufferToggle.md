@@ -1,15 +1,17 @@
-﻿import { interval } from "rxjs";
+# bufferToggle
+
+#### signature: `bufferToggle(openings: Observable, closingSelector: Function): Observable`
+
+## Toggle on to catch emitted values from source, toggle off to emit buffered values as array.
+
+### Examples
+
+##### Example 1: Toggle buffer on and off at interval
+
+```ts
+import { interval } from "rxjs";
 import { bufferToggle } from "rxjs/operators";
 
-
-
-export class BufferTogglePoc {
-
-    public test() {
-        this.func1();
-    }
-
-    public func1() {
         // emit value every second
         const sourceInterval = interval(1000);
         // start first buffer after 5s, and every 5s after
@@ -29,6 +31,4 @@ export class BufferTogglePoc {
         const subscribe = bufferToggleInterval.subscribe((val) =>
             console.log("Emitted Buffer:", val),
         );
-    }
-
-}
+```
