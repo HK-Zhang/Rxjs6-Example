@@ -1,14 +1,17 @@
-﻿import { interval } from "rxjs";
+# buffer
+
+#### signature: `buffer(closingNotifier: Observable): Observable`
+
+## Collect output values until provided observable emits, emit as array.
+
+### Examples
+
+##### Example 1: 
+
+```ts
+import { interval } from "rxjs";
 import { buffer } from "rxjs/operators";
 
-
-export class BufferPoc {
-
-    public test() {
-        this.func1();
-    }
-
-    public func1() {
         // Create an observable that emits a value every second
         const myInterval = interval(1000);
 
@@ -19,7 +22,4 @@ export class BufferPoc {
         // ex. output: [0,1,2,3] ... [4,5,6,7,8]
         const subscribe = myBufferedInterval.subscribe((val) =>
             console.log(" Buffered Values:", val),
-        );
-    }
-
-}
+```
