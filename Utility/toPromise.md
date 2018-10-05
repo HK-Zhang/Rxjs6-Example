@@ -1,16 +1,23 @@
-﻿import { of } from "rxjs";
+# toPromise
+
+#### signature: `toPromise() : Promise`
+
+## Convert observable to promise.
+
+---
+
+:warning: `toPromise` has been deprecated! (RxJS 5.5+)
+
+---
+
+### Examples
+
+##### Example 1: Basic Promise
+
+```ts
+import { of } from "rxjs";
 import { delay } from "rxjs/operators";
 
-
-
-export class ToPromisePoc {
-
-    public test() {
-        // this.func1();
-        this.func2();
-    }
-
-    public func1() {
         // return basic observable
         const sample = (val) => of(val).pipe(delay(5000));
         // convert basic observable to promise
@@ -20,9 +27,14 @@ export class ToPromisePoc {
             .then((result) => {
                 console.log("From Promise:", result);
             });
-    }
+```
 
-    public func2() {
+##### Example 2: Using Promise.all
+
+```ts
+import { of } from "rxjs";
+import { delay } from "rxjs/operators";
+
         // return basic observable
         const sample = (val) => of(val).pipe(delay(5000));
         /*
@@ -39,6 +51,4 @@ export class ToPromisePoc {
         example().then((val) => {
             console.log("Promise.all Result:", val);
         });
-    }
-
-}
+```
