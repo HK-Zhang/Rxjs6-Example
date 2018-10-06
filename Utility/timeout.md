@@ -1,16 +1,22 @@
-﻿import { of } from "rxjs";
+# timeout
+
+#### signature: `timeout(due: number, scheduler: Scheduler): Observable`
+
+## Error if no value is emitted before specified duration
+
+### Examples
+
+##### Example 1: Timeout after 2.5 seconds
+
+```ts
+import { of } from "rxjs";
 import { catchError, concatMap, delay, timeout } from "rxjs/operators";
 
-export class TimeoutPoc {
-  public test() {
-    this.func1();
-  }
+// simulate request
+function makeRequest(timeToDelay) {
+  return of('Request Complete!').pipe(delay(timeToDelay));
+}
 
-  public makeRequest(timeToDelay) {
-    return of("Request Complete!").pipe(delay(timeToDelay));
-  }
-
-  public func1() {
     const mimicRequest = (duration) =>
       this.makeRequest(duration).pipe(
         timeout(2500),
@@ -25,5 +31,4 @@ export class TimeoutPoc {
             *  "Request Complete!"
             */
       .subscribe(console.log);
-  }
-}
+```
