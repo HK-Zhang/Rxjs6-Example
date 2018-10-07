@@ -1,4 +1,4 @@
-import { from, Observable, range } from "rxjs";
+import { from, range } from "rxjs";
 import { filter, map, reduce, scan, startWith } from "rxjs/operators";
 
 export class PipePoc {
@@ -26,7 +26,7 @@ export class PipePoc {
             filterOutEvens
             , doubleBy(2)
             , sum)
-            .subscribe((x) => console.log(x)); // 40
+            .subscribe(console.log); // 40
     }
 
     public func2() {
