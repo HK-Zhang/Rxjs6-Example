@@ -32,7 +32,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 
 let obj: any;
 // tslint:disable-next-line:prefer-const
-let rxjsMethod = "timeout";
+let rxjsMethod = "mergeMap";
 
 switch (rxjsMethod) {
     case "pipe":

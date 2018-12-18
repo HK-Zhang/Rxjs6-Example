@@ -4,10 +4,10 @@ import { map, mapTo, mergeMap, switchMap, take } from "rxjs/operators";
 
 export class MergeMapPoc {
     public test() {
-        // this.func0();
+        this.func0();
         // this.func01();
         // this.func1();
-        this.func3();
+        // this.func3();
     }
 
     /**
@@ -26,7 +26,7 @@ export class MergeMapPoc {
 
         result.subscribe(console.log);
 
-        // => c ,c ,c ...
+        // => c ,c ,c ,c ,c
     }
 
     public func01() {
@@ -42,7 +42,7 @@ export class MergeMapPoc {
 
         result.subscribe(console.log);
 
-        // => a ,b ,c ...
+        // => a ,b ,c ,a ,b ,c ,a ,b ,c ,a ,b ,c ,a ,b ,c
     }
 
     public func1() {
